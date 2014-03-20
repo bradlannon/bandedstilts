@@ -1,0 +1,15 @@
+Django==1.5.5
+argparse==1.2.1
+boto==2.15.0
+dj-database-url==0.2.2
+django-storages==1.1.8
+gunicorn==18.0
+psycopg2==2.5.1
+wsgiref==0.1.2
+django-jquery
+django-embed-video
+django-tinymce
+sorl-thumbnail
+django-tagging
+PIL
+imagestore

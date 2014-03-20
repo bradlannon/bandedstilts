@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Banded Stilts -  Reviews {% endblock %}
+{% block tags %} Press Reviews  {% endblock %}
+{% block content %}
+        <br>
+           {% for review in reviews %}
+                <div id="pressTitle"><a href="/press/{{ review.id }}/"> {{ review.title }}  - <b>{{ review.company }}</b></a></div>
+            {%  endfor %}
+{% endblock %}

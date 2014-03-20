@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Banded Stilts -  Blog {% endblock %}
+{% block tags %} Blog Archive  {% endblock %}
+{% block content %}
+    <div id="BlogTitle">Archive</div>
+    <br><br>
+
+     <div id="dynamicContent">
+        <br>
+            <table class="table-condensed" >
+                {% for blog in blogs %}
+                        {% if blog.displayBlog == "Y" %}
+                              <tr>
+                                  <td width="160px"><div id="gigDate"><a href="/blog/{{ blog.id }}/"> {{ blog.blogTime|date:"N j, Y" }}  </a></div></td>
+                                  <td width="350px"><div id="gigTitle"><a href="/blog/{{ blog.id }}/">{{ blog.title }} </a></div></td>
+                              </tr>
+                        {% endif %}
+                {% endfor %}
+            </table>
+    </div>
+{% endblock %}

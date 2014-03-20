@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Banded Stilts -  Shows {% endblock %}
+{% block tags %} Shows Gigs  {% endblock %}
+{% block content %}
+
+<br>
+    <table class="table-condensed" >
+         {% for gig in gigs %}
+                {% if gig.displayGig == "Y" %}
+                      <tr>
+                          <td width="160px"><div id="gigDate"><a href="/gig/{{ gig.id }}/"> {{ gig.gigTime|date:"N j, Y" }}</a></div></td>
+                          <td width="350px"><div id="gigTitle"><a href="/gig/{{ gig.id }}/">{{ gig.venue }}</a></div></td>
+                          <td><div id="gigDetails"><a href="/gig/{{ gig.id }}/"></a>
+                          </div></td>
+                      </tr>
+                {% endif %}
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+
+

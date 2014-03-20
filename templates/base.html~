@@ -1,0 +1,84 @@
+{% load static %}
+{% load bootstrap_toolkit %}
+
+<html>
+    <head>
+		<link href="{% static "css/main.css" rel="stylesheet" type="text/css" media="screen" />
+        	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" >
+		<script src="{% static "js/jquery.preload.min.js" type="text/javascript" %}"></script>
+		<script src="{% static "js/aplweb.scrollbars.js" type="text/javascript" %}"></script>
+		<link href="{% static "css/scrollbars-black.css" %}" rel="stylesheet" type="text/css" media="screen" />
+		<script src="http://threedubmedia.googlecode.com/files/jquery.event.drag-2.0.min.js"></script>
+		<script src="http://github.com/cowboy/jquery-resize/raw/v1.1/jquery.ba-resize.min.js"></script>
+		<script src="http://remysharp.com/demo/mousehold.js"></script>
+		<script src="https://raw.github.com/brandonaaron/jquery-mousewheel/master/jquery.mousewheel.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static "js/jquery.dajax.core.js" %}"></script>
+
+
+        <title>{% block title %} Stilted Bands{% endblock %} </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	</head>
+
+    <body id="body">
+            <div id="pageContent">
+                            <div id="menuImage"><div id="MenuContent">
+                            <a href="/" id="homelink" class="menulinks" onclick="Dajaxice.bandedsite.blog.BlogPage(Dajax.process);">Home</a><br>
+                            <a href="/listen/" id="listenlink" class="menulinks" >Listen</a><br>
+                            <a href="/video/" id="listenlink" class="menulinks" >Video</a><br>
+                            <a href="/gallery/" id="listenlink" class="menulinks" >Gallery</a><br>
+                            <a href="/bio/" id="biolink" class="menulinks" onclick="Dajaxice.example.sayhello(my_js_callback);">Bio</a><br>
+                            <a href="/gigs/" id="showslink" class="menulinks">Shows</a><br>
+                            <a href="/press/" id="presslink" class="menulinks">Press</a><br>
+                            <a href="/contact/" id="contactlink" class="menulinks">Contact</a></div></div>
+                    <div id="StiltsPages">
+                    <div id="MountainsIcons"><div id="SocialMedia">
+                            <div id="Facebook" onclick="window.open('https://www.facebook.com/pages/Banded-Stilts/159772757386679','mywindow');" style="cursor: hand;"></div>
+                            <div id="Twitter" onclick="window.open('https://twitter.com/BandedStilts','mywindow');" style="cursor: hand;"></div>
+                            <div id="Google" onclick="window.open('https://www.google.ca/search?q=banded+stilts','mywindow');" style="cursor: hand;"></div>
+                            <a href="mailto:customer@email.com"><div id="Email"></div></a>
+                    </div></div>
+                    <div id="CarsImage"></div>
+                    <div id="TopPageWhite">
+                    <div id="TownImage"></div>
+                    <div id="TextContent"><div id="scrollTest">
+                                    {% block content %}
+                                        Welcome to the Banded Stilts website.  <br> Unfortunately something went wrong.
+                                    {% endblock %}</div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+
+
+        <script type="text/javascript">
+           $(document).ready(function () {
+
+
+
+
+               $("#scrollTest").scrollbars();
+
+               $('a').click(function(ev) {
+                  render_ajax_blocks(ev.target.href);
+                  return false;
+                });
+
+
+               $("a[data-target=#my-modal]").click(function(event) {
+                        event.preventDefault();
+                        var target = $(this).attr("href");
+                        $("#my-modal .modal-body").load(target, function() {
+                             $("#my-modal").modal("show");
+                        });
+                    })
+            });
+        </script>
+
+        <div id="TwitterPreload"></div>
+        <div id="FacebookPreload"></div>
+        <div id="EmailPreload"></div>
+        <div id="GooglePreload"></div>
+</body>
+</html>

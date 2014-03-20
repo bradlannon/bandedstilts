@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} Welcome to Banded Stilts - Little Village LP now for sale!{% endblock %} </title>
+        <link rel="shortcut icon" type="image/x-icon" href="{% static "static/images/favicon.ico" %}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <link href="https://s3.amazonaws.com/bandedstilts/css/prettyPhoto.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="stylesheet" href="https://s3.amazonaws.com/bandedstilts/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+        <script src="https://s3.amazonaws.com/bandedstilts/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+        <link href="{% static "css/main.css" %}" rel="stylesheet" type="text/css" media="screen and (min-width: 1025px)" />
+        <link href="{% static "css/smartphone640.css" %}" rel="stylesheet" type="text/css" media="handheld, screen and (max-width: 640px)" />
+        <link href="{% static "css/phablet800.css" %}" rel="stylesheet" type="text/css" media="handheld, screen and (min-width: 641px) and (max-width: 800px)" />
+        <link href="{% static "css/tablet1024.css" %}" rel="stylesheet" type="text/css" media="handheld, screen and (min-width: 801px) and (max-width: 1024px)" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1, initial-scale=1">
+        <meta name="keywords" content="BandedStilts music Halifax Newfoundland {% block tags %} Steve Haley Brad Lannon Squid Ghost Town {% endblock %}">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta name="description" content="Welcome to BandedStilts - The new debut album 'Little Village' is now available for listen and purchase. Please check out our 'shows' page to see when we will be in your area.">
+	</head>
+
+    <body id="body">
+
+                <div id="BandedMenu">{% include 'menu.html' %}</div>
+                <div id="MountainsIcons">
+                    <div id="SocialMedia">{% include 'social.html' %}</div>
+                </div>
+                               <div id="TopPageWhite">
+                    <div id="TextContent">
+
+                            {% block content %}
+                                Welcome to the Banded Stilts website.  <br> Unfortunately something went wrong.
+                            {% endblock %}
+
+                    </div>
+                <div id="TownImage"></div>
+                </div>
+ <div id="Footer"><footer>Created by <a href="http://www.bradlannon.ca" style="color: #cbaf79; text-decoration: none;" target="_blank">Brad Lannon</a> using <a href="http://www.python.org/" style="color: #cbaf79; text-decoration: none;" target="_blank">Python</a>(<a href="https://www.djangoproject.com/" style="color: #cbaf79; text-decoration: none;" target="_blank">Django</a>), Powered by <a href="https://dashboard.heroku.com/apps" style="color: #cbaf79; text-decoration: none;" target="_blank">Heroku</a> & <a href="http://aws.amazon.com/s3/" style="color: #cbaf79; text-decoration: none;" target="_blank">Amazon S3</a><br><a href="/admin/" target="_blank" style="color: #cbaf79; text-decoration: none;">Banded Stilts &copy; 2014</a></footer></div>
+
+
+
+        <script type="text/javascript" charset="utf-8">
+              $(document).ready(function(){
+                $("a[rel^='prettyPhoto']").prettyPhoto();
+              });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Banded Stilts -  Reviews {% endblock %}
+{% block tags %} Press Reviews in Detail  {% endblock %}
+{% block content %}
+    <br>
+      <b> {{ reviews.title }}</b> <br><a href="{{ reviews.website }}" target="_blank">{{ reviews.company }}</a>
+    <br>
+      {{ reviews.content|safe }}
+
+
+
+{% endblock %}

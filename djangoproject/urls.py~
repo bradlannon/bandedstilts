@@ -1,0 +1,37 @@
+from django.conf.urls import patterns, include, url
+import settings
+
+
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+admin.autodiscover()
+
+
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'bandedsite.views.home', name='home'),
+    # url(r'^bandedsite/', include('bandedsite.foo.urls')),
+    # Uncomment the admin/doc line below to enable admin documentation:
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
+    # (r'^tinymce/', include('tinymce.urls')),
+    (r'^$', 'blog.views.BlogPage'),
+    (r'^tinymce/', include('tinymce.urls')),
+    url(r'^blog_archive/', 'blog.views.Archive'),
+
+    url(r'^gigs/', 'gigs.views.GigsAll'),
+    url(r'^gig/(?P<id>.*)/$', 'gigs.views.Detail'),
+    url(r'^blog/(?P<id>.*)/$', 'blog.views.Detail'),
+    url(r'^press/(?P<id>.*)/$', 'reviews.views.Detail'),
+    url(r'^listen/', 'music.views.Music'),
+    url(r'^press/', 'reviews.views.ReviewsPage'),
+    url(r'^bio/', 'pages.views.MainBioPage'),
+    url(r'^video/', 'pages.views.MainVideoPage'),
+    url(r'^gallery/', 'pages.views.MainGalleryPage'),
+    url(r'^contact/', 'pages.views.MainContactPage'),
+    url(r'^demo/', 'pages.views.DemoPage'),
+
+)
+

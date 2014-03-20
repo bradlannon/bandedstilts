@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Banded Stilts -  Blog {% endblock %}
+{% block tags %} blog {{ blogs.tags }} {% endblock %}
+{% block content %}
+    {% if blogs.displayBlog == "Y" %}
+        <div id="BlogTitle">{{ blogs.title }}</div>
+        <div id="BlogDate">{{ blogs.blogTime }}</div>
+        <div id="BlogContent">{{ blogs.content|safe }}</div>
+    {% endif %}
+    <p> <br><a href="/blog_archive/" class="underline">Back</a>
+{% endblock %}
