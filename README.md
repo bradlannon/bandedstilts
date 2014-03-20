@@ -1,4 +1,4 @@
-Django Skeleton Project
+Banded Stilts - website
 ================
 
 ####*A clean project of a Django web-framework running on Heroku with static files served from Amazon S3, attempting to follow the [12-factor](http://www.12factor.net/) design pattern.*
