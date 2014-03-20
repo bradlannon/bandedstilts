@@ -3,7 +3,8 @@
 # except keeps /bin directory.
 
 *.py[co]
-
+*.pyc
+*.py~
 # Packages
 *.egg
 *.egg-info
